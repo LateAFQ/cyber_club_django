@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'main/css/bg_video.css' %}" />
+{% endblock %}
+
+{% block content %}
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="{% static 'main/videos/videoplayback.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <div class="content_pk">
+            <table>
+                <tr>
+                    <th>VIP</th>
+                    <th>MAIN</th>
+                    <th>PS</th>
+                </tr>
+                {% for com in computers %}
+                <tr>
+                    <td>{{ com.vip }}</td>
+                    <td>{{ com.main }}</td>
+                    <td>{{ com.ps }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock %}
+

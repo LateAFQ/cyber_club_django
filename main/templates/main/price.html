@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="content">
+        <div class="container">
+            <div class="center">
+                <table>
+                    <tr>
+                        <th>ПК</th>
+                        <th>PS</th>
+                    </tr>
+                    {% for p in price %}
+                    <tr>
+                        <td>{{ p.computer }}</td>
+                        <td>{{ p.playstation }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block ftr %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>© All rights reserved 2024 </p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>More contact <br> Job<br>Our team</p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <img class="call-anim" style="width: 120px;" src="/media/photos/tg.png" alt="...">
+                    <img class="call-anim" style="width: 130px;" src="/media/photos/inst.png" alt="...">
+                </div>
+            </div>
+        </div>
+{% endblock %}

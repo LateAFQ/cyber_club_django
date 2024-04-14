@@ -1,0 +1,179 @@
+.navbar {
+    background-color: #001f3f !important;
+}
+
+.custom-navbar {
+    font-family: 'Arial', sans-serif;
+
+    padding: 10px 0;
+}
+
+
+.custom-navbar .nav-link {
+    font-size: 20px;
+    color: rgb(4, 209, 245);
+    margin-top: 10px;
+    margin-right: 6em;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+
+
+}
+
+#logo {
+    margin-right: 10em;
+    max-width: 60px;
+    height: auto;
+}
+
+.navbar-nav .nav-item .nav-link.active{
+    color: aqua;}
+
+.navbar-nav .nav-item .nav-link.active:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+
+.content{
+    padding: 25em;
+    margin-top: 1em;
+    background: #a32828 url(/media/photos/bg_pk.jpg) center center/cover no-repeat;
+}
+
+
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 70%;
+    height: 20%;
+  }
+
+th{
+    border: 1px solid black;
+    padding: 8px;
+    color: #000000;
+    font-weight: bold;
+    background-color: #060afca2;
+  }
+
+td{
+    border: 1px solid black;
+    padding: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #37269baf;
+}
+
+
+
+footer{
+
+    width: 100%;
+    background: linear-gradient(12deg, #241f31 0%, #000000 100%);
+    font-size: 20px;
+    color: #0278d8;
+    padding-top: 2em;
+    font-family:  sans-serif, Helvetica, Arial ;
+}
+
+.call-anim{
+    animation: myAnim 2s ease 1s infinite normal forwards;
+}
+
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 0;
+	}
+
+	10% {
+		transform: rotate(2deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-4deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(4deg);
+	}
+
+	80% {
+		transform: rotate(-2deg);
+	}
+
+	90% {
+		transform: rotate(2deg);
+	}
+}
+
+.carousel {
+    margin-top: 10em;
+    margin: 5em;
+    margin-bottom: 5em;
+}
+
+
+
+.text_info{
+    background: linear-gradient(90deg, #00009c 0%, #000000 100%);
+    color: aqua;
+    border-radius: 10px;
+    animation: textAnim 2s ease 0s 1 normal forwards;
+}
+
+
+section{
+    background: #a32828 url(/media/photos/bg_index.png) center center/cover no-repeat;
+}
+
+@keyframes textAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateX(68px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateX(32px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateX(8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+}

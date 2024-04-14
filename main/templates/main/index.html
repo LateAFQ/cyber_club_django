@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-lg-1">
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <hr class="my-5">
+                    <div class="row">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+                            style="max-width: 620px;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                {% for car in carousel %}
+                                <div class="carousel-item active">
+                                    <img src="{{car.image_for_carousel.url}}"  class="w-100" alt="Slide 1">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 style="color: rgb(0, 0, 0)">PS</h5>
+                                        <p style="color: rgb(0, 2, 92)">Современные ps5 и комфортный зал для</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3em;" class="col-lg-5 col-md-12">
+                    <hr class="my-5">
+                    <div class="row px-2">
+                        <div class="col-lg-12 sidebar my-4">
+                            <div class="text_info">
+                                <p>{{ about_site.about_site }}
+                                </p>
+                                <p>
+                                    Мы не 'внушаем' уют - мы его дарим
+                                </p>
+
+                                <p> Спасибо что выбираете нас!</p>
+                            </div>
+                        </div>
+{% endblock %}
+
+{% block ftr %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>© All rights reserved 2024 </p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>More contact <br> Job<br>Our team</p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <img class="call-anim" style="width: 120px;" src="/media/photos/tg.png" alt="...">
+                    <img class="call-anim" style="width: 130px;" src="/media/photos/inst.png" alt="...">
+                </div>
+            </div>
+        </div>
+{% endblock %}

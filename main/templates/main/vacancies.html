@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'main/css/stl_vacancies.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="vacancies">
+    <div class="container text-center">
+        <div class="row">
+            {% for v in vacancies %}
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ v.images.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ v.header }}</h5>
+                        <p class="card-text">
+                            {{ v.description }}
+                        </p>
+                        <a href="#" class="btn btn-primary">Отклик</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block ftr %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>© All rights reserved 2024 </p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>More contact <br> Job<br>Our team</p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <img class="call-anim" style="width: 120px;" src="/media/photos/tg.png" alt="...">
+                    <img class="call-anim" style="width: 130px;" src="/media/photos/inst.png" alt="...">
+                </div>
+            </div>
+        </div>
+{% endblock %}
