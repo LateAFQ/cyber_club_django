@@ -1,4 +1,8 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
 
 from main.models import Text_Photo, Price, Assembly, Vacancies
 
@@ -52,3 +56,18 @@ def page_vacancies(request):
     }
 
     return render(request, 'main/vacancies.html', context=data)
+
+
+@login_required
+def page_profile(request):
+    data = {'logo': txt_img}
+    return render(request, 'main/profile.html', context=data)
+
+
+class LoginUser(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'users/login.html'
+    extra_context = {'title': "Авторизация"}
+
+    def get_success_url(self):
+        return reverse_lazy('home')

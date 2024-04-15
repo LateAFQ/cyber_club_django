@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Sign in</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-error">{{ form.non_field_errors }}</div>
+                {% for f in form %}
+                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+            <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-start mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                    <label class="form-check-label" for="form1Example3"> Remember password </label>
+                </div>
+                <div style="margin-right: 18em">
+                    <p>You can to <a href="{% url 'users:register' %}">Sign Up</a></p>
+                </div>
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+{% block ftr %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>© All rights reserved 2024 </p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <p>More contact <br> Job<br>Our team</p>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-text text-center">
+                    <img class="call-anim" style="width: 120px;" src="/media/photos/tg.png" alt="...">
+                    <img class="call-anim" style="width: 130px;" src="/media/photos/inst.png" alt="...">
+                </div>
+            </div>
+        </div>
+{% endblock %}
