@@ -12,8 +12,8 @@ class Text_Photo(models.Model):
 
 
 class Price(models.Model):
-    computer = models.CharField(blank=True, default=None, max_length=100)
-    playstation = models.CharField(blank=True, default=None, max_length=100)
+    computer = models.CharField(blank=True, default=None, max_length=100, verbose_name="компьютеры")
+    playstation = models.CharField(blank=True, default=None, max_length=100, verbose_name="плейстейшен")
 
     objects = models.Manager()
 
@@ -27,8 +27,8 @@ class Assembly(models.Model):
 
 
 class Vacancies(models.Model):
-    header = models.CharField(default=None, max_length=100)
-    description = models.TextField(default=None, max_length=300)
+    header = models.CharField(default=None, max_length=100, verbose_name="заголовок")
+    description = models.TextField(default=None, max_length=300, verbose_name="описание")
     images = models.ImageField(upload_to='photos', default=None, verbose_name='Фото')
     flt = models.ForeignKey('Filters', on_delete=models.PROTECT, related_name='filters', verbose_name="фильтры",
                              default=1)
@@ -37,7 +37,7 @@ class Vacancies(models.Model):
 
 
 class Filters(models.Model):
-    name = models.CharField(max_length=100, db_index=True, verbose_name="фильтры")
+    name = models.CharField(max_length=100, db_index=True, verbose_name="фильтр")
     slug = models.SlugField(max_length=255, unique=True, db_index=True)
 
     objects = models.Manager()
