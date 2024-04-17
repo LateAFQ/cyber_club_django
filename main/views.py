@@ -6,6 +6,8 @@ from django.urls import reverse_lazy
 
 from main.models import Text_Photo, Price, Assembly, Vacancies
 
+from .models import Filters
+
 txt_img = get_object_or_404(Text_Photo, pk=1)
 carousel = Text_Photo.objects.filter(is_published=True)
 
@@ -47,11 +49,10 @@ def page_assembly(request):
 
 def page_vacancies(request):
     vacancies = Vacancies.objects.all()
+    flt = Filters.objects.all()
 
     data = {
-        'logo': txt_img,
-        'carousel': carousel,
-        'about_site': txt_img,
+        'flt': flt,
         'vacancies': vacancies,
     }
 
@@ -71,3 +72,16 @@ class LoginUser(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home')
+
+
+def show_category(request, fil_slug):
+    filters = get_object_or_404(Filters, slug=fil_slug)
+    vcs = Vacancies.objects.filter(flt_id=filters.pk)
+    flt = Filters.objects.all()
+
+    data = {
+        'flt': flt,
+        'vacancies': vcs,
+    }
+
+    return render(request, 'main/vacancies.html', context=data)

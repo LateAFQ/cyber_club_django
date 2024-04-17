@@ -2,12 +2,23 @@
 {% load static %}
 
 {% block extra_style %}
-<link rel="stylesheet" href="{% static 'main/css/stl_vacancies.css' %}" />
+<link rel="stylesheet" href="{% static 'main/css/styles_for_vacancies.css' %}" />
 {% endblock %}
 
 {% block content %}
 <div class="vacancies">
     <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="menu">
+                    <ul>
+                        {% for f in flt %}
+                        <li><a href="{{ f.get_absolute_url }}">{{ f.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="row">
             {% for v in vacancies %}
             <div class="col-lg-4">

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Text_Photo(models.Model):
@@ -29,5 +30,17 @@ class Vacancies(models.Model):
     header = models.CharField(default=None, max_length=100)
     description = models.TextField(default=None, max_length=300)
     images = models.ImageField(upload_to='photos', default=None, verbose_name='Фото')
+    flt = models.ForeignKey('Filters', on_delete=models.PROTECT, related_name='filters', verbose_name="фильтры",
+                             default=1)
 
     objects = models.Manager()
+
+
+class Filters(models.Model):
+    name = models.CharField(max_length=100, db_index=True, verbose_name="фильтры")
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
+
+    objects = models.Manager()
+
+    def get_absolute_url(self):
+        return reverse('filters', kwargs={'fil_slug': self.slug})

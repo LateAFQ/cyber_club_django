@@ -1,0 +1,52 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue !important;
+}
+
+.vacancies{
+    background-color: aliceblue !important;
+}
+
+.container{
+    margin-top: 6em;
+    margin-bottom: 11em;
+}
+
+.col-lg-4{
+    margin-top: 4em;
+}
+
+footer{
+    padding: 0 !important;
+}
+
+.menu {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  background: #f0f0f0;
+}
+
+}
