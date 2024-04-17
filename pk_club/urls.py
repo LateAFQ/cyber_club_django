@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from pk_club import settings
+from main.views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+handler404 = page_not_found
+
 admin.site.site_header = "Панель администрирования"
+admin.site.index_title = "Изменения сайта"
