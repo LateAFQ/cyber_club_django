@@ -10,12 +10,26 @@ class Text_Photo(models.Model):
 
     objects = models.Manager()
 
+    def __str__(self):
+        return self.pk
+
+    class Meta:
+        verbose_name = 'Тексты и фото'
+        verbose_name_plural = 'текст или фото'
+
 
 class Price(models.Model):
     computer = models.CharField(blank=True, default=None, max_length=100, verbose_name="компьютеры")
     playstation = models.CharField(blank=True, default=None, max_length=100, verbose_name="плейстейшен")
 
     objects = models.Manager()
+
+    def __str__(self):
+        return self.pk
+
+    class Meta:
+        verbose_name = 'Цена'
+        verbose_name_plural = 'Цены'
 
 
 class Assembly(models.Model):
@@ -24,6 +38,13 @@ class Assembly(models.Model):
     ps = models.CharField(blank=True, default=None, max_length=100)
 
     objects = models.Manager()
+
+    def __str__(self):
+        return self.pk
+
+    class Meta:
+        verbose_name = 'Сборка пк'
+        verbose_name_plural = 'Сборки пк'
 
 
 class Vacancies(models.Model):
@@ -35,6 +56,13 @@ class Vacancies(models.Model):
 
     objects = models.Manager()
 
+    def __str__(self):
+        return self.header
+
+    class Meta:
+        verbose_name = 'Вакансию'
+        verbose_name_plural = 'Вакансии'
+
 
 class Filters(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="фильтр")
@@ -44,3 +72,10 @@ class Filters(models.Model):
 
     def get_absolute_url(self):
         return reverse('filters', kwargs={'fil_slug': self.slug})
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'фильтр'
+        verbose_name_plural = 'Фильтры'

@@ -10,6 +10,7 @@ class Text_Image_Admin(admin.ModelAdmin):
     list_display_links = ('id', 'image_for_carousel')
     list_per_page = 5
     list_filter = ['id']
+    list_editable = ['logo']
 
     @admin.display(description="Краткое описание", ordering='about_site')
     def brief_info(self, tp: Text_Photo):
@@ -29,12 +30,20 @@ class Assembly_Admin(admin.ModelAdmin):
     list_display_links = ('id', 'vip', 'main')
     list_per_page = 5
 
+    @admin.action (description="Опубликовать выбранные записи")
+    def set_published(self, request, queryset):
+        pass
+
 
 @admin.register(Vacancies)
 class Vacancies_Admin(admin.ModelAdmin):
     list_display = ('id', 'header', 'description', 'images')
     list_display_links = ('id', 'header', 'description', 'images')
     list_per_page = 5
+
+    @admin.action(description="Опубликовать выбранные записи")
+    def set_published(self, request, queryset):
+        pass
 
 
 @admin.register(Filters)
