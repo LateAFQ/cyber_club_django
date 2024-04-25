@@ -6,9 +6,9 @@ also I could do other things like that for practice
 
 I used boostrap for the basic frontend.
 
-db: postgreSQL
-cashe: redis
-web-server: nginx
+db: postgreSQL;
+cashe: redis;
+web-server: nginx;
 
 Thank you for reading
 
