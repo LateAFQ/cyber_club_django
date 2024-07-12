@@ -8,7 +8,6 @@ I used boostrap for the basic frontend.
 
 db: postgreSQL;
 cashe: redis;
-web-server: nginx;
 
 Thank you for reading
 
